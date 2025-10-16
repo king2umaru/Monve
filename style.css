@@ -191,47 +191,68 @@ p {
   --gold: #d4af37;
   --bg-dark: #0d0d0d;
 }
-
 .monve-slider {
-  width: 500px;
-  height: 500px;
+  width: 90%; /* controls width on all screens */
+  max-width: 550px; /* max size on big screens */
+  height: 500px; /* your image box height */
+  margin: 50px auto; /* centers it horizontally */
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-  border: 2px solid var(--gold);
-  margin: 50px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   position: relative;
-  background-color: var(--bg-dark);
 }
 
 .monve-slides {
   display: flex;
-  width: calc(500px * 10); /* 10 images */
-  animation: slide 40s infinite linear;
+  width: calc(500px * 10); /* 10 images * width */
+  animation: slide 25s linear infinite;
 }
 
 .monve-slides img {
-  width: 500px%;
+  width: 500px;
   height: 500px;
   object-fit: cover;
   flex-shrink: 0;
-  transition: transform 0.5s ease;
+  border-radius: 20px;
 }
 
-/* Optional: zoom effect on hover */
-.monve-slides img:hover {
-  transform: scale(1.05);
-}
-
-/* Animation */
+/* Smooth infinite slide animation */
 @keyframes slide {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-5000px);
-  } /* 500px * 10 images */
+  } /* 10 images * 500px */
 }
+
+/* Pause on hover */
+.monve-slider:hover .monve-slides {
+  animation-play-state: paused;
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 768px) {
+  .monve-slider {
+    width: 90%;
+    height: 300px;
+  }
+
+  .monve-slides img {
+    width: 300px;
+    height: 300px;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-3000px);
+    } /* 10 images * 300px */
+  }
+}
+
 .center-btn {
   display: block;
   margin: 0 auto;
