@@ -11,6 +11,8 @@ body {
 
 h1 {
   text-align: center;
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 /* ====== images ====== */
 .brand-logo {
@@ -100,6 +102,8 @@ div {
 }
 
 .btn {
+  text-align: center;
+
   background: #f0d965;
   background-image: -webkit-linear-gradient(top, #f0d965, #2980b9);
   background-image: -moz-linear-gradient(top, #f0d965, #2980b9);
@@ -117,7 +121,7 @@ div {
   font-size: 29px;
   padding: 18px;
   text-decoration: none;
-  width: 500px;
+  width: 50%;
 }
 
 .btn:hover {
@@ -227,4 +231,29 @@ p {
   100% {
     transform: translateX(-5000px);
   } /* 500px * 10 images */
+}
+.center-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+/* button*/
+.monve-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #b8860b, #ffd700);
+  color: black;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.monve-btn:hover {
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
 }
